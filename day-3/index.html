@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Sample</title>
+</head>
+<body>
+    <header class="desktop">
+        <h1>Under construction...</h1>
+    </header>
+    <header class="mobile-header">        
+        <!-- src: https://codepen.io/surjithctly/pen/pLDwe?editors=1100 -->
+        <button class="dropdown-menu-button" onclick="dropDown()">
+            <svg width="66" height="34" viewBox="0 0 66 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="dropdown-menu-icon"
+                    d="M37.1556 31.9343C34.685 33.7569 31.315 33.7569 28.8444 31.9343L3.3589 13.133C-2.07708 9.12275 0.759378 0.5 7.51452 0.5L58.4855 0.5C65.2406 0.5 68.0771 9.12276 62.6411 13.133L37.1556 31.9343Z" 
+                    fill="#564A4A"
+                />
+            </svg>
+        </button>
+        <nav id="menu" class = "not-clicked clicked">
+            <ul class="menu-container">
+                <li class="menu-item"><a href="#">Home</a></li>
+                <li class="menu-item"><a href="#">Artists</a></li>
+                <li class="menu-item"><a href="#">Albums</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-desktop">
+    </div>
+    <div class="main-mobile">
+        <div class="top-half"></div>
+        <div class="bottom-half"></div>
+        <button class="arrow" onclick="imgChange('left')">
+            <svg class="arrow" width="41" height="38" viewBox="0 0 41 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 21.5C39.3807 21.5 40.5 20.3807 40.5 19C40.5 17.6193 39.3807 16.5 38 16.5V21.5ZM1.23223 17.2322C0.255924 18.2085 0.255924 19.7915 1.23223 20.7678L17.1421 36.6777C18.1184 37.654 19.7014 37.654 20.6777 36.6777C21.654 35.7014 21.654 34.1184 20.6777 33.1421L6.53553 19L20.6777 4.85786C21.654 3.88155 21.654 2.29864 20.6777 1.32233C19.7014 0.34602 18.1184 0.34602 17.1421 1.32233L1.23223 17.2322ZM38 16.5L3 16.5V21.5L38 21.5V16.5Z" fill="#E5E5E5"/>
+                </svg>
+        </button>
+        <div class="subject-img"><img id="subject-pic" src="./cover_1.jpg" alt=""></div>
+        <button class="arrow" onclick="imgChange('right')">
+            <svg class="arrow" width="41" height="38" viewBox="0 0 41 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 21.5C39.3807 21.5 40.5 20.3807 40.5 19C40.5 17.6193 39.3807 16.5 38 16.5V21.5ZM1.23223 17.2322C0.255924 18.2085 0.255924 19.7915 1.23223 20.7678L17.1421 36.6777C18.1184 37.654 19.7014 37.654 20.6777 36.6777C21.654 35.7014 21.654 34.1184 20.6777 33.1421L6.53553 19L20.6777 4.85786C21.654 3.88155 21.654 2.29864 20.6777 1.32233C19.7014 0.34602 18.1184 0.34602 17.1421 1.32233L1.23223 17.2322ZM38 16.5L3 16.5V21.5L38 21.5V16.5Z" fill="#E5E5E5"/>
+            </svg>
+        </button>
+    </div>
+    <div class="details-desktop"></div>
+    <div class="details-mobile">
+        <div class="subject-desc-1">
+            <div class="subject-desc-img-1">
+                <img src="./rachel.jpg" alt="">
+            </div>
+            <div class="bio">
+                <p>Rachel Watashiga, part of the duo group "Chelmico"</p>
+            </div>
+        </div>
+        <div class="subject-desc-2">
+            <div class="bio">
+                <p>Mamiko Suzuki, part of the duo group "Chelmico"</p>
+            </div>
+            <div class="subject-desc-img-2">
+                <img src="./mamiko.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const min = 1;
+    const max = 4;
+    let index = 1;
+
+    function dropDown(){
+        const element = document.querySelector('#menu');
+        element.classList.toggle("clicked");
+        console.log('clicked!');
+
+    }
+
+    function imgChange(direction){
+        const element = document.querySelector('#subject-pic');
+        console.log('clicked!');
+
+        if(direction === "left"){
+            index = getPrevNum(index)
+        } else index = getNextNum(index);
+
+        element.src = `cover_${index}.jpg`;
+    }
+
+    function getNextNum (index){
+        if(index+ 1 > max ){
+            return min;
+        } else return index + 1;
+    }
+
+    function getPrevNum (index){
+        if(index - 1 < min ){
+            return max;
+        } else return index - 1;
+    }
+</script>
