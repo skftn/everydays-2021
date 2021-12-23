@@ -1,0 +1,111 @@
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --very-dark-blue-main: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+}
+
+* {
+    box-sizing: border-box;
+    background: var(--very-dark-blue-main);
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+}
+
+.container {
+    background-color: var(--very-dark-blue-card);
+    width: 50%;
+    margin: auto;
+    padding: 3%;
+    border-radius: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: inherit;
+}
+
+.main-image > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;;
+}
+
+.card-title, .card-desc, .details, .price, .time, .footer {
+    background: inherit;
+}
+
+.card-title{
+    color: white;
+}
+
+.card-desc{
+    color: var(--soft-blue);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+
+}
+
+.price > span {
+    color: var(--cyan);
+    font-weight: 600;
+    background: inherit;
+}
+
+.price > img {
+    vertical-align:top;
+}
+
+
+.time > span  {
+    color: var(--soft-blue);
+    font-weight: 400;
+    background: inherit;
+}
+
+.footer {
+    display: flex;
+    justify-content: left;
+    padding-top: 1rem;
+    border-top: 1px solid var(--very-dark-blue-line);
+    align-items: center;
+}
+
+.footer > img {
+    max-width: 2.5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.footer > span {
+    color: var(--soft-blue);
+    background: inherit;
+    size: 2rem;
+    padding-left: 1rem;
+}
+
+.footer span {
+    font-weight: 600;
+}
+
+#creator {
+    color: white;
+    background: inherit;
+}
