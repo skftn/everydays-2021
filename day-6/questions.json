@@ -1,9 +1,37 @@
-[{
-    "id": 1,
-    "question": "A flashing red traffic light signifies that a driver should do what?",
-    "A": "stop",
-    "B": "speed up",
-    "C": "proceed with caution",
-    "D": "honk the horn",
-    "answer": "A"
-}]
+[
+  {
+    "question": "Horoscopes accurately predict future events 85% of the time.",
+    "answer": false,
+    "id": 1
+  },
+  {
+    "question": "The National Weather Service will pay $30 for the rights to any original photograph of lightning. ",
+    "answer": false,
+    "id": 2
+  },
+  {
+    "question": "Liberace was a notorious womanizer. ",
+    "answer": false,
+    "id": 3
+  },
+  {
+    "question": "Due to a calendar mix-up, there were two years in a row identified as \"1973\". ",
+    "answer": false,
+    "id": 4
+  },
+  {
+    "question": "Contrary to popular belief, the white is not the healthiest part of an egg. It's actually the shell. ",
+    "answer": false,
+    "id": 5
+  },
+  {
+    "question": "Intelligent people have more zinc and copper in their hair.",
+    "answer": true,
+    "id": 6
+  },
+  {
+    "question": "The Spanish word esposa means \"wife.\" The plural, esposas, means \"wives,\" but also \"handcuffs.\"",
+    "answer": true,
+    "id": 7
+  }
+]

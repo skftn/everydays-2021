@@ -3,17 +3,18 @@ const path = require('path');
 
 const filePath = path.join(__dirname, 'questions.json');
 
+// attempt at using generator functions for unique ids
 // src: https://dev.to/rfornal/use-cases-for-javascript-generators-1npc
-function * idCreator() {
-    let i = 5;
-    while(true)
-        yield i++;
-}
+// function * idCreator() {
+//     let i = 5;
+//     while(true)
+//         yield i++;
+// }
 
-const ids = idCreator();
+// const ids = idCreator();
 
 const writeToFile = async (contents) => {
-    await fs.writeFile(filePath, JSON.stringify(contents));
+    await fs.writeFile(filePath, JSON.stringify(contents, null, 2));
 }
 
 const getAll = async () => {
@@ -23,7 +24,7 @@ const getAll = async () => {
 
 const getByQuestion = async (arg) => {
     const results = await getAll();
-    return results.find(q => q.question.toLowerCase().includes(arg.toLowerCase()));
+    return results.filter(q => q.question.toLowerCase().includes(arg.toLowerCase()));
 }
 
 const getById = async (id) => {
@@ -32,26 +33,25 @@ const getById = async (id) => {
 }
 
 
-const postQuestion = async ({question, A, B, C, D, answer}) => {
-    if(!question || !A || !B || !C || !D || !answer) {
-        console.log("Error! Missing values!");
+const postQuestion = async ({question, answer}) => {
+    if(!question) {
+        console.log("Error! Missing question!");
         return;
     }
 
     const newQuestion = {
         question,
-        A, B, C, D,
         answer
     }
 
-    newQuestion.id = ids.next().value;
+    // newQuestion.id = ids.next().value;
 
-    console.log("the created question:", newQuestion)
 
     const content = await getAll();
+    const newId = Math.floor(Math.random() * (10000 - 7) + 7);
+    newQuestion.id = newId;
     content.push(newQuestion);
 
-    console.log("The contents: ", content)
 
     writeToFile(content);
 }
@@ -70,15 +70,13 @@ const postQuestion = async ({question, A, B, C, D, answer}) => {
 
 
 
-const updateQuestionById = async (arg) => {
+const updateQuestion = async (arg) => {
     const questions = await getAll();
     if(questions.some(q => q.id === arg.id)){
         const newQuestions = questions.filter(q => q.id !== arg.id);
         newQuestions.push(arg);
-        console.log("The arg array", arg)
-        console.log("The new questions", newQuestions)
         writeToFile(newQuestions);
-    } else {console.log('Question not found! Nothing updated!')}
+    } else { return 'Question not found! Nothing updated!'}
 }
 
 const deleteQuestionById = async (id) => {
@@ -86,7 +84,7 @@ const deleteQuestionById = async (id) => {
     if(questions.some(q => q.id == id)){
         const newQuestions = questions.filter(q => q.id !== id);
         writeToFile(newQuestions);
-    } else {console.log('Question not found! Nothing updated!')}
+    } else {return 'Question not found! Nothing updated!'}
 }
 
 
@@ -95,6 +93,6 @@ module.exports = {
     getByQuestion,
     getById,
     postQuestion,
-    updateQuestionById,
+    updateQuestion,
     deleteQuestionById,
 }
