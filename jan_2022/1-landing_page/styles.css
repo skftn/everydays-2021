@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --dark-bckgrnd: #1F2937;
+    --hero-main-color: #F9FAF8;
+    --hero-main-size: 48px;
+    --hero-secondary-color: #F9FAF8;
+    --hero-secondary-header-link-size: 18px;
+    --header-logo-size: 24px;
+    --header-logo-color: #F9FAF8;
+    --button-cta-color: #3882F6;
+    --info-header-color: #1F2937;
+    --info-header-size: 36px;
+    --quote-bckgrnd-color: #E5E7Eb;
+    --quote-color: #1F2937;
+    --quote-size: 36px;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero {
+    background-color: var(--dark-bckgrnd);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 10rem;
+    padding-bottom: 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header  p {
+    color: var(--header-logo-color);
+    font-size: var(--header-logo-size);
+    font-weight: bold;
+}
+
+nav  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--hero-secondary-color);
+
+}
+
+.hero-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+.hero-main-text {
+    margin-right: 2rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.hero-main-text > h1 {
+    margin: 0;
+    color: var(--hero-main-color);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-main-text > p {
+    margin: 0;
+    color: var(--hero-secondary-color);
+    margin-bottom: 1rem;
+}
+
+.sign-up-container > button {
+    background-color: var(--button-cta-color);
+    color: var(--hero-secondary-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.hero-main-img {
+    margin-left: 2rem;
+}
+
+.hero-main-img img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+    padding: 2rem 10rem;
+    padding-bottom: 4rem;
+}
+
+.info-pics {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.info-text {
+    color: var(--quote-color);
+    width: 80%;
+    text-align: center;
+}
+
+.info-img {
+    width: 90%;
+}
+
+.info-img img{
+    display:block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    border: 5px solid var(--button-cta-color);
+}
+
+.quotes {
+    background-color: var(--quote-bckgrnd-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5rem 10rem;
+    padding-bottom: 3rem;
+}
+
+.quotes p {
+    margin: 0;
+}
+
+.quote{
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: lighter;
+    color: var(--quote-color);
+}
+
+
+.author{
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding-right: 2rem;
+}
+
+.cta {
+    padding: 5rem 10rem;
+}
+
+.cta-container {
+    display:flex;
+    background-color: var(--button-cta-color);
+    padding: 2rem 0;
+    justify-content: space-evenly;
+    align-self: center;
+    border-radius: 0.3rem;
+
+}
+
+.cta-text {
+    color: white;
+}
+
+.cta-text h2{
+    margin: 0;
+    font-size: 1rem
+}
+
+.cta-text p{
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.cta-button {
+    margin: auto 0;
+}
+
+.cta-button button {
+    border: 2px solid white;
+    color: white;
+    background-color: var(--button-cta-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+
+}
+
+footer{
+    background-color: var(--dark-bckgrnd);
+    padding: 1rem 0;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
